@@ -1,0 +1,182 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SHA1_GetResult" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_HashMethod" Type="InArgument(x:String)" />
+    <x:Property Name="out_HashResult" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>592,668.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SHA1_GetResult_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Getting Hash method and returning hash results." DisplayName="SHA1_GetResult" sap:VirtualizedContainerService.HintSize="496,604" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;GetResult workflow started.&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SHA1 online" sap:VirtualizedContainerService.HintSize="434,1029.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a2a30321-8f35-4b7b-ac3d-fdce349fe158" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,810" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NSelectItem DisplayName="Select Item 'sha-1'" sap:VirtualizedContainerService.HintSize="338,159.33333333333334" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_HashMethod]" ScopeIdentifier="a2a30321-8f35-4b7b-ac3d-fdce349fe158" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="38">
+                  <x:String>sha-1</x:String>
+                  <x:String>md5</x:String>
+                  <x:String>md2</x:String>
+                  <x:String>md4</x:String>
+                  <x:String>sha256</x:String>
+                  <x:String>sha384</x:String>
+                  <x:String>sha512</x:String>
+                  <x:String>ripemd128</x:String>
+                  <x:String>ripemd160</x:String>
+                  <x:String>ripemd256</x:String>
+                  <x:String>ripemd320</x:String>
+                  <x:String>whirlpool</x:String>
+                  <x:String>tiger128,3</x:String>
+                  <x:String>tiger160,3</x:String>
+                  <x:String>tiger192,3</x:String>
+                  <x:String>tiger128,4</x:String>
+                  <x:String>tiger160,4</x:String>
+                  <x:String>tiger192,4</x:String>
+                  <x:String>snefru</x:String>
+                  <x:String>gost</x:String>
+                  <x:String>adler32</x:String>
+                  <x:String>crc32</x:String>
+                  <x:String>crc32b</x:String>
+                  <x:String>haval128,3</x:String>
+                  <x:String>haval160,3</x:String>
+                  <x:String>haval192,3</x:String>
+                  <x:String>haval224,3</x:String>
+                  <x:String>haval256,3</x:String>
+                  <x:String>haval128,4</x:String>
+                  <x:String>haval160,4</x:String>
+                  <x:String>haval192,4</x:String>
+                  <x:String>haval224,4</x:String>
+                  <x:String>haval256,4</x:String>
+                  <x:String>haval128,5</x:String>
+                  <x:String>haval160,5</x:String>
+                  <x:String>haval192,5</x:String>
+                  <x:String>haval224,5</x:String>
+                  <x:String>haval256,5</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="http://www.sha1-online.com/" DesignTimeRectangle="905, 546, 133, 26" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'sha-1'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='' aaname='' /&gt;" Guid="dd88405d-1bbe-4b7d-adec-4514337d3d0b" ImageBase64="" InformativeScreenshot="88b28cec9a579fdb67f643c9c7b84f14.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ClickType="Single" DisplayName="Click 'hash'" sap:VirtualizedContainerService.HintSize="338,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a2a30321-8f35-4b7b-ac3d-fdce349fe158" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="http://www.sha1-online.com/" DesignTimeRectangle="1185, 481, 71, 32" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'hash'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='' aaname='hash' check:text='hash' /&gt;" Guid="7a427c65-0987-485e-b7fc-d7b29113b3e2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAkCAYAAADB7MdlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGqSURBVGhD7ZlBqsIwEEB7lW57Au/QhSBdeQpXBdeChxDcufUAHsATeAd3XsH85reTzMTJTwbqB+MMPJA4mSSvSSpYGY3sUFmCqOq6Nm3bmq7rFIamaSZVgywrqu97NvHbsaKqyh++yopSWa+AqKSs5+P89YAolZWByhKgsgTML+u2MSsout3zOf/C3uxgHsuNubM5MlSWAJUlQGUJeL+sy5oMwgs8mtMS5UysDkcmF0n4MzeQhecFbSQ/jes7ADGfrBhEGL94B85N1KbCEnUtQmG4L8SssnYX+A5Pfm2uU/79sJjaFuZ0y83FdfGujNXAImP5aaCWBWI+WcGTu25hsNQk8YK8LN9/IHkf8sItvPQ0buwBiLdd8Dmy8EJG0ELD+4/LcSBZwUP7YFn85e6J74oXiJQCZZGj5dr5Y0gI7kbA303FyYotKEMWBh9PN2bJspAUetSgPf4Ww/kF76zwGHIgMZGj5yBSCpRF20d+dweqQ39sRl4IwVifIatgVJYAlSVAZQlQWQJUlgCVJSBLFv7bWhmBILJUFA+Ek6Wi4kD4TxrJUFnZYcwP+0iTbcQcdCEAAAAASUVORK5CYII=" InformativeScreenshot="cf92f1f2b59b9889a2595736d89097a7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Get Text 'SHA-1 MD5 on Wikipedia'" sap:VirtualizedContainerService.HintSize="338,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a2a30321-8f35-4b7b-ac3d-fdce349fe158" TextString="[out_HashResult]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="http://www.sha1-online.com/" DesignTimeRectangle="667, 632, 707, 33" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'d5d2dfe83a068ea3c47797f…'" FullSelectorArgument="&lt;webctrl id='result-sha1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='result-sha1' tag='SPAN' type='' class='' /&gt;" Guid="75a9b1f6-c383-4663-9e6b-892c65cf228c" ImageBase64="" InformativeScreenshot="0910376a8ae70bfc0d68eacb173c8d44.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="497, 816, 948, 33" ElementType="Text" FriendlyName="'SHA-1 MD5 on Wikipedia'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;p' idx='2' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='P' aaname='  on Wikipedia' check:innerText='SHA-1 MD5 on Wikipedia' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Successfully retrieved the HashResult.&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAABmSURBVDhPrczRDYAgDIRhH5nAFdx/B1zGJTBHcqY2FNrqw5ejCfm369wblaOG9QAevwWwJD9ahgG5K8sAlnBrroBcLRzAEu5UQO6nAKQDFAoQbnIHLNMA8fOIGfB6BUh/mnkCObXdA5Q5fU2oWVYAAAAASUVORK5CYII=" InformativeScreenshot="882e3145a15c3a04eb91c1f655dd2a39.jpg" Selector="&lt;html app='chrome.exe' title='SHA1 online' /&gt;" Url="http://www.sha1-online.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
